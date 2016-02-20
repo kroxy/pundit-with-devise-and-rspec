@@ -14,7 +14,7 @@ feature 'Sign_in',:devise do
   end
 
   scenario 'user cannot sign in with invalid email' do
-    user FactoryGirl.create(:user)
+    user = FactoryGirl.create(:user)
     signin('invalid@email.com',user.password)
     expect(page).to have_content 'Invalid email or password'
   end
